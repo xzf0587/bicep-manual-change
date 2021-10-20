@@ -22,6 +22,15 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2021-02-01-preview' = {
   }
 }
 
+resource sqlDatabase2 'Microsoft.Sql/servers/databases@2021-02-01-preview' = {
+  parent: sqlServer
+  location: resourceGroup().location
+  name: 'database2'
+  sku: {
+    name: 'Basic'
+  }
+}
+
 resource sqlFirewallRules 'Microsoft.Sql/servers/firewallRules@2021-02-01-preview' = {
   parent: sqlServer
   name: 'AllowAzure'
