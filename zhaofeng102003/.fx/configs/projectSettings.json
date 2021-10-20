@@ -1,0 +1,31 @@
+{
+    "appName": "zhaofeng102003",
+    "projectId": "cce2d6e8-2976-41c2-a4ce-c914f6d283db",
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [
+            "sql",
+            "function"
+        ],
+        "capabilities": [
+            "Tab"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-frontend-hosting",
+            "fx-resource-identity",
+            "fx-resource-azure-sql",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-function",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio",
+            "fx-resource-simple-auth"
+        ]
+    },
+    "version": "1.0.0",
+    "activeEnvironment": "dev",
+    "isFromSample": false,
+    "programmingLanguage": "javascript",
+    "defaultFunctionName": "getUserProfile"
+}

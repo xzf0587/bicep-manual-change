@@ -1,0 +1,50 @@
+{
+    "solution": {
+        "resourceNameSuffix": "541edf",
+        "resourceGroupName": "zhaofeng102003-dev-rg",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 7 Days",
+        "location": "centralus",
+        "teamsAppTenantId": "{{solution.teamsAppTenantId}}",
+        "provisionSucceeded": true
+    },
+    "fx-resource-azure-sql": {
+        "admin": "zhaofeng",
+        "sqlResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/zhaofeng102003-dev-rg/providers/Microsoft.Sql/servers/zhaofeng10deva638f8-sql-server",
+        "sqlEndpoint": "zhaofeng10deva638f8-sql-server.database.windows.net",
+        "databaseName": "zhaofeng10deva638f8-database"
+    },
+    "fx-resource-appstudio": {
+        "teamsAppId": "617c5d5e-04cc-4e46-b53b-f267f2927ead"
+    },
+    "fx-resource-frontend-hosting": {
+        "storageName": "frontendstg4z5adzwncz3wc",
+        "storageResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/zhaofeng102003-dev-rg/providers/Microsoft.Storage/storageAccounts/frontendstg4z5adzwncz3wc",
+        "endpoint": "https://frontendstg4z5adzwncz3wc.z19.web.core.windows.net",
+        "domain": "frontendstg4z5adzwncz3wc.z19.web.core.windows.net"
+    },
+    "fx-resource-identity": {
+        "identityName": "zhaofeng10deva638f8-managedIdentity",
+        "identityClientId": "fc7f053f-ef69-4ff9-9702-e6a7af7f0a7c",
+        "identityResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/zhaofeng102003-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/zhaofeng10deva638f8-managedIdentity"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "8ad8ce8b-6a1e-4ae1-ac9f-bda7f6a4aa6c",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "1ba9bea8-1f3e-43fd-817f-9f3e8677d91c",
+        "oauth2PermissionScopeId": "c40ce327-7758-4419-bb90-808058827db4",
+        "tenantId": "5ee8f0b5-8bde-431b-9cd5-0d27114bf06d",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/5ee8f0b5-8bde-431b-9cd5-0d27114bf06d",
+        "applicationIdUris": "api://frontendstg4z5adzwncz3wc.z19.web.core.windows.net/8ad8ce8b-6a1e-4ae1-ac9f-bda7f6a4aa6c"
+    },
+    "fx-resource-function": {
+        "functionEndpoint": "https://zhaofeng10deva638f8-function-webapp.azurewebsites.net",
+        "functionAppId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/zhaofeng102003-dev-rg/providers/Microsoft.Web/sites/zhaofeng10deva638f8-function-webapp"
+    },
+    "fx-resource-simple-auth": {
+        "endpoint": "https://zhaofeng10deva638f8-simpleauth-webapp.azurewebsites.net",
+        "skuName": "B1"
+    }
+}
