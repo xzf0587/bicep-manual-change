@@ -11,6 +11,9 @@
     "azureSql_adminPassword": {
       "value": "{{profile.fx-resource-azure-sql.adminPassword}}"
     },
+    "azureSql_databaseName2": {
+      "value": "database2"
+    },
     "m365ClientId": {
       "value": "{{profile.fx-resource-aad-app-for-teams.clientId}}"
     },

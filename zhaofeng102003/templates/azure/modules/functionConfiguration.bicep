@@ -16,6 +16,8 @@ var teamsMobileOrDesktopAppClientId = '1fec8e78-bce4-4aaf-ab1b-5451cc387264'
 var teamsWebAppClientId = '5e3ce6c0-2b1f-4285-8d4b-75ee78787346'
 var authorizedClientApplicationIds = '${teamsMobileOrDesktopAppClientId};${teamsWebAppClientId}'
 
+param sqlDatabaseName2 string
+
 resource functionApp 'Microsoft.Web/sites@2021-01-15' existing = {
   name: functionAppName
 }
@@ -64,6 +66,7 @@ resource functionAppAppSettings 'Microsoft.Web/sites/config@2021-01-15' = {
     IDENTITY_ID: identityClientId
     SQL_DATABASE_NAME: sqlDatabaseName
     SQL_ENDPOINT: sqlEndpoint
+    SQL_DATABASE_NAME2: sqlDatabaseName2
   }
 }
 

@@ -21,6 +21,8 @@ param simpleAuth_packageUri string = 'https://github.com/OfficeDev/TeamsFx/relea
 
 var m365ApplicationIdUri = 'api://${frontendHostingProvision.outputs.domain}/${m365ClientId}'
 
+param azureSql_databaseName2 string
+
 module frontendHostingProvision './modules/frontendHostingProvision.bicep' = {
   name: 'frontendHostingProvision'
   params: {
@@ -40,6 +42,7 @@ module azureSqlProvision './modules/azureSqlProvision.bicep' = {
     sqlDatabaseName: azureSql_databaseName
     administratorLogin: azureSql_admin
     administratorLoginPassword: azureSql_adminPassword
+    sqlDatabaseName2: azureSql_databaseName2
   }
 }
 module functionProvision './modules/functionProvision.bicep' = {
@@ -68,6 +71,7 @@ module functionConfiguration './modules/functionConfiguration.bicep' = {
     sqlDatabaseName: azureSqlProvision.outputs.databaseName
     sqlEndpoint: azureSqlProvision.outputs.sqlEndpoint
     identityClientId: userAssignedIdentityProvision.outputs.identityClientId
+    sqlDatabaseName2: azureSqlProvision.outputs.databaseName2
   }
 }
 module simpleAuthProvision './modules/simpleAuthProvision.bicep' = {
@@ -110,3 +114,6 @@ output simpleAuth_skuName string = simpleAuthProvision.outputs.skuName
 output simpleAuth_endpoint string = simpleAuthProvision.outputs.endpoint
 output simpleAuth_webAppName string = simpleAuthProvision.outputs.webAppName
 output simpleAuth_appServicePlanName string = simpleAuthProvision.outputs.appServicePlanName
+
+output azureSql_databaseName2 string = azureSqlProvision.outputs.databaseName2
+

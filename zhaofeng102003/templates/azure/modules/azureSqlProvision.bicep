@@ -34,3 +34,14 @@ resource sqlFirewallRules 'Microsoft.Sql/servers/firewallRules@2021-02-01-previe
 output resourceId string = sqlServer.id
 output sqlEndpoint string = sqlServer.properties.fullyQualifiedDomainName
 output databaseName string = sqlDatabaseName
+
+param sqlDatabaseName2 string
+resource sqlDatabase2 'Microsoft.Sql/servers/databases@2021-02-01-preview' = {
+  parent: sqlServer
+  location: resourceGroup().location
+  name: sqlDatabaseName2
+  sku: {
+    name: 'Basic'
+  }
+}
+output databaseName2 string = sqlDatabaseName2
